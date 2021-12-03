@@ -1,7 +1,7 @@
 //import the associated models from index.js
 const {Meal} = require('./meal')
 const {Chef} = require('./chef')
-const{Waiter}= require('./waiter')
+const Waiter = require('./waiter')
 const {sequelize} = require('./db')
 
 describe('Restaurant Database', () => {
@@ -37,17 +37,17 @@ describe('Restaurant Database', () => {
      })
 
      test('Has a waiter', async() => {
-        await Waiter.bulkCreate([{waiter_name: 'James', waiter_salary: 700},
-                                {waiter_name: 'Cathy', waiter_salary: 1000},
-                                {waiter_name: 'Jimmy', waiter_salary: 800},
-                                {waiter_name: 'James', waiter_salary: 700}])
+        await Waiter.bulkCreate([{name: 'James', salary: 700},
+                                {name: 'Cathy', salary: 1000},
+                                {name: 'Jimmy', salary: 800},
+                                {name: 'James', salary: 700}])
                const testWaiter = await Waiter.findOne({
               where: {
-                 waiter_name: 'James'
+                 name: 'James'
               }
             });
-         expect(testWaiter.waiter_name).toBe('James')
-         expect(testWaiter.waiter_salary).toBe(700)
+         expect(testWaiter.name).toBe('James')
+         expect(testWaiter.salary).toBe(700)
      })
 
 })

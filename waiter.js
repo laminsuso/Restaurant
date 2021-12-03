@@ -13,4 +13,4 @@ Waiter.init(
   }
 );
 
-module.exports = { Waiter };
+module.exports = Waiter;
