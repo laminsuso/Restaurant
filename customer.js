@@ -18,4 +18,4 @@ Customer.init({
     timestamps: false
 })
 
-module.exports = {Customer}
+module.exports = Customer
